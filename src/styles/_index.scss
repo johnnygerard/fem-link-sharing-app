@@ -15,3 +15,53 @@
     @content;
   }
 }
+
+$palette: (
+  'purple': #633CFF,
+  'purple-hover': #BEADFF,
+  'light-purple': #EFEBFF,
+  'dark-gray': #333,
+  'gray': #737373,
+  'border': #D9D9D9,
+  'light-gray': #FAFAFA,
+  'white': #FFF,
+  'red': #FF3939,
+);
+
+// Typography
+%heading-m {
+  font: {
+    size: 32px;
+    weight: 700;
+  }
+}
+
+%heading-s {
+  font: {
+    size: 16px;
+    weight: 600;
+  }
+}
+
+%body-m {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+}
+
+%body-s {
+  font: {
+    size: 12px;
+    weight: 400;
+  }
+}
+
+// Effects
+%active-selection {
+  box-shadow: 0 0 32px rgba(99, 60, 255, 0.25);
+}
+
+%shadow {
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.10);
+}
