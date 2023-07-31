@@ -6,8 +6,8 @@ import { Routes } from '@angular/router';
   standalone: true,
   template: '<p>dummy works!</p>'
 })
-class DummyComponent {} // Temporary placeholder component
-class DummyGuard {} // Temporary placeholder guard
+// Temporary placeholder component
+class DummyComponent { }
 
 export const routes: Routes = [
   { path: 'login', component: DummyComponent },
@@ -17,12 +17,20 @@ export const routes: Routes = [
   // Guarded routes
   // AuthGuard redirects to 'login' if the user is logged out. Otherwise, it allows the user to
   // access the requested route.
-  { path: 'links', component: DummyComponent, canActivate: [DummyGuard] },
-  { path: 'profile-details', component: DummyComponent, canActivate: [DummyGuard] },
+  {
+    path: 'links',
+    component: DummyComponent,
+    // canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile-details',
+    component: DummyComponent,
+    // canActivate: [AuthGuard]
+  },
   {
     path: 'preview',
     component: DummyComponent,
-    canActivate: [DummyGuard],
+    // canActivate: [AuthGuard],
     data: { isPreview: true }
   },
 
