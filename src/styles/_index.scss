@@ -27,3 +27,32 @@ $palette: (
   'white': #FFF,
   'red': #FF3939,
 );
+
+// Typography
+%heading-m {
+  font: {
+    size: 32px;
+    weight: 700;
+  }
+}
+
+%heading-s {
+  font: {
+    size: 16px;
+    weight: 600;
+  }
+}
+
+%body-m {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+}
+
+%body-s {
+  font: {
+    size: 12px;
+    weight: 400;
+  }
+}

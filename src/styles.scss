@@ -1,3 +1,9 @@
 @use 'reset';
 @use 'fonts';
 @use 'index' as *;
+
+body {
+  // Typography
+  font-family: 'Instrument Sans', sans-serif;
+  line-height: 1.5;
+}
