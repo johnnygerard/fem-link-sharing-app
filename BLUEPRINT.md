@@ -25,3 +25,36 @@ export const routes: Routes = [
   { path: '**', redirectTo: 'links' }
 ];
 ```
+
+
+## Components
+- LoginPageComponent
+  - LogoComponent
+  - LoginFormComponent
+- NewAccountPageComponent
+  - LogoComponent
+  - NewAccountFormComponent
+- LinkEditorPageComponent
+  - NavbarComponent
+  - LinkEditorComponent
+    - MobilePreviewComponent
+- ProfileEditorPageComponent
+  - NavbarComponent
+  - ProfileEditorComponent
+    - MobilePreviewComponent
+- UserPageComponent
+
+### Shared components
+- LogoComponent
+- LinkComponent
+- SelectComponent
+- SVG templates
+
+## Services
+- NavigationService
+- AuthService
+- DataService
+
+## Other
+- AuthGuard
+- User data type
