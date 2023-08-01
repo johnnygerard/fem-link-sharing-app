@@ -1,9 +1,10 @@
 @use 'index' as *;
 
 :host {
-  // Center content for manual testing
+  // Style for manual testing
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: map-get($palette, 'light-gray');
 }
