@@ -1,0 +1,108 @@
+@use 'index' as *;
+
+:host {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 476px;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 12px;
+  background: map-get($palette, 'white');
+}
+
+.title {
+  @extend %heading-m;
+  color: map-get($palette, 'dark-gray');
+}
+
+.subtitle {
+  margin-top: 8px;
+  @extend %body-m;
+  color: map-get($palette, 'gray');
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  padding: 0 16px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid map-get($palette, 'border');
+  background: map-get($palette, 'white');
+  @extend %body-m;
+
+  &:is(:hover, :focus-within):not(.invalid) {
+    outline: 1px solid map-get($palette, 'purple');
+    outline-offset: -1px;
+    @extend %active-selection;
+  }
+
+  &.invalid {
+    outline: 1px solid map-get($palette, 'red');
+    outline-offset: -1px;
+
+    .validation-message {
+      color: map-get($palette, 'red');
+      @extend %body-s;
+    }
+  }
+}
+
+label {
+  @extend %body-s;
+  color: map-get($palette, 'dark-gray');
+}
+
+input {
+  margin-left: 16px;
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.validation-helper {
+  @extend %body-s;
+  color: map-get($palette, 'gray');
+}
+
+button[type='submit'] {
+  height: 46px;
+  border-radius: 8px;
+  background: map-get($palette, 'purple');
+  color: map-get($palette, 'white');
+  @extend %heading-s;
+
+  &:is(:hover, :focus-visible):not(:disabled) {
+    background: map-get($palette, 'purple-hover');
+    @extend %active-selection;
+  }
+
+  &:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+}
+
+.footer {
+  @extend %body-m;
+  color: map-get($palette, 'gray');
+  text-align: center;
+
+  a {
+    color: map-get($palette, 'purple');
+    text-decoration: none;
+  }
+}
