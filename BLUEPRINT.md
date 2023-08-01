@@ -52,8 +52,7 @@ export const routes: Routes = [
 
 ## Services
 - NavigationService
-- AuthService
-- DataService
+- UserService
 
 ## Other
 - AuthGuard
