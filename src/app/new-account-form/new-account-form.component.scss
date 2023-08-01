@@ -13,11 +13,21 @@ form {
   padding: 40px;
   border-radius: 12px;
   background: map-get($palette, 'white');
+
+  @include mobile {
+    width: 100%;
+    border-radius: 0;
+    background: none;
+  }
 }
 
 .title {
   @extend %heading-m;
   color: map-get($palette, 'dark-gray');
+
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
 .subtitle {
@@ -100,6 +110,12 @@ button[type='submit'] {
   @extend %body-m;
   color: map-get($palette, 'gray');
   text-align: center;
+
+  @include mobile {
+    br {
+      display: inline;
+    }
+  }
 
   a {
     color: map-get($palette, 'purple');
