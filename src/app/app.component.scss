@@ -1,10 +1,12 @@
 @use 'index' as *;
 
 :host {
-  // Style for manual testing
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: map-get($palette, 'light-gray');
+  display: block;
+
+  // // Style for manual testing
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // min-height: 100vh;
+  // background: map-get($palette, 'light-gray');
 }
