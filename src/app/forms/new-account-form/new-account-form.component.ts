@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LockIconSvgComponent } from '../svg/lock-icon-svg.component';
-import { MailIconSvgComponent } from '../svg/mail-icon-svg.component';
-import { Router, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { LockIconSvgComponent } from 'src/app/svg/lock-icon-svg.component';
+import { MailIconSvgComponent } from 'src/app/svg/mail-icon-svg.component';
+import { UserService } from 'src/app/user.service';
 import { passwordMatchValidator } from './passwordMatchValidator';
-import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-new-account-form',
@@ -18,7 +18,7 @@ import { UserService } from '../user.service';
     MailIconSvgComponent
   ],
   templateUrl: './new-account-form.component.html',
-  styleUrls: ['./new-account-form.component.scss']
+  styleUrls: ['../form.component.scss']
 })
 export class NewAccountFormComponent {
   form = this.formBuilder.group({
