@@ -30,7 +30,8 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/no-unused-vars": [ 1, { "argsIgnorePattern": "^_" } ]
       }
     },
     {
@@ -41,7 +42,7 @@
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility"
       ],
-      "rules": {}
+      "rules": { }
     }
   ]
 }

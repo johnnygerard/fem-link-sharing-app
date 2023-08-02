@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
+import { authGuard } from './auth.guard';
 
 @Component({
   selector: 'app-dummy',
@@ -14,24 +15,24 @@ export const routes: Routes = [
   { path: 'new-account', component: DummyComponent },
   { path: 'user/:id', component: DummyComponent, data: { isPreview: false } },
 
-  // Guarded routes
-  // AuthGuard redirects to 'login' if the user is logged out. Otherwise, it allows the user to
-  // access the requested route.
   {
-    path: 'links',
-    component: DummyComponent,
-    // canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile-details',
-    component: DummyComponent,
-    // canActivate: [AuthGuard]
-  },
-  {
-    path: 'preview',
-    component: DummyComponent,
-    // canActivate: [AuthGuard],
-    data: { isPreview: true }
+    path: '',
+    canActivate: [authGuard],
+    children: [
+      {
+        path: 'links',
+        component: DummyComponent,
+      },
+      {
+        path: 'profile-details',
+        component: DummyComponent,
+      },
+      {
+        path: 'preview',
+        component: DummyComponent,
+        data: { isPreview: true }
+      },
+    ]
   },
 
   { path: '**', redirectTo: 'links' }
