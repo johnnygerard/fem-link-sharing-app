@@ -3,6 +3,8 @@
 @use 'index' as *;
 
 body {
+  background: map-get($palette, 'light-gray');
+
   // Typography
   font-family: 'Instrument Sans', sans-serif;
   line-height: 1.5;

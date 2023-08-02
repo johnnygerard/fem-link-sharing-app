@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { authGuard } from './auth.guard';
+import { NewAccountPageComponent } from './form-pages/new-account-page/new-account-page.component';
+import { LoginPageComponent } from './form-pages/login-page/login-page.component';
 
 @Component({
   selector: 'app-dummy',
@@ -11,8 +13,8 @@ import { authGuard } from './auth.guard';
 class DummyComponent { }
 
 export const routes: Routes = [
-  { path: 'login', component: DummyComponent },
-  { path: 'new-account', component: DummyComponent },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'new-account', component: NewAccountPageComponent },
   { path: 'user/:id', component: DummyComponent, data: { isPreview: false } },
 
   {
