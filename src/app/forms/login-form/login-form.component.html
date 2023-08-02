@@ -1,0 +1,57 @@
+<form #form="ngForm"
+  (ngSubmit)="onSubmit()">
+  <hgroup>
+    <h1 class="title">Login</h1>
+    <p class="subtitle">Add your details below to get back into the app</p>
+  </hgroup>
+  <div class="main">
+    <label>
+      Email address
+      <div class="input-box"
+        [class.invalid]="(email?.hasError('required') || email?.hasError('email'))
+          && (email?.dirty || email?.touched)">
+        <app-mail-icon-svg />
+        <input type="email"
+          name="email"
+          [(ngModel)]="emailValue"
+          (input)="authError = false"
+          #email="ngModel"
+          placeholder="e.g. alex@email.com"
+          autocomplete="email"
+          spellcheck="false"
+          required
+          email />
+        <span class="validation-message"
+          *ngIf="email?.hasError('required') && (email?.dirty || email?.touched)">Can’t be
+          empty</span>
+        <span class="validation-message"
+          *ngIf="email?.hasError('email') && (email?.dirty || email?.touched)">Bad format</span>
+      </div>
+    </label>
+    <label>
+      Password
+      <div class="input-box"
+        [class.invalid]="(password?.hasError('required') || authError)
+          && (password?.dirty || password?.touched)">
+        <app-lock-icon-svg />
+        <input type="password"
+          name="password"
+          [(ngModel)]="passwordValue"
+          (input)="authError = false"
+          #password="ngModel"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required />
+        <span *ngIf="password?.hasError('required') && (password?.dirty || password?.touched)"
+          class="validation-message">Can’t be empty</span>
+        <span *ngIf="authError"
+          class="validation-message">Please check again</span>
+      </div>
+    </label>
+    <button type="submit"
+      [disabled]="form.invalid || authError">Login</button>
+    <p class="footer">Don’t have an account?
+      <br hidden><a routerLink="/new-account">Create account</a>
+    </p>
+  </div>
+</form>
